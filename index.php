@@ -25,11 +25,11 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">About US</a>
       </li>
     
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Contact</a>
+        <a class="nav-link disabled" href="#">Contact Us</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -60,6 +60,8 @@
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
+
+
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
