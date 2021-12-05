@@ -1,4 +1,5 @@
-<?php include 'config.php'?>
+<?php require_once 'crud.php';?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -56,26 +57,23 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>1</td>
-      <td>100</td>
-    </tr>
 
-
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+  <?php
+  $crud=new crud();
+  // $crud->checkcon_db();
+  $crud->get_all();
+  while($row=$crud->result->fetch_assoc()){
+   ?>
+<tr>
+      <th scope="row"><?php echo $row['id']?></th>
+      <td><?php echo $row['item']?></td>
+      <td><?php echo $row['quantity']?></td>
+      <td><?php echo $row['price']?></td>
     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+ <?php
+   }
+ ?>
+    
   </tbody>
 </table>
 
