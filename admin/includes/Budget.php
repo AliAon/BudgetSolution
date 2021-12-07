@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-class crud extends db_conntection {
+class Budget extends db_conntection {
    
     public $row;
     //get all

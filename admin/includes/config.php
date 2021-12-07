@@ -16,7 +16,7 @@ class db_conntection{
 public function registor() {
 
 
-  $this->mysqli= new mysqli('localhost', 'root', '', 'fertilizer_solution');
+  $this->mysqli= new mysqli('127.0.0.1:3308', 'root', '', 'fertilizer_solution');
  
 }
 

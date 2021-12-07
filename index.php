@@ -1,4 +1,5 @@
-<?php require_once 'crud.php';?>
+
+<?php require_once 'admin/includes/Budget.php';?>
 
 <!doctype html>
 <html lang="en">
@@ -59,10 +60,9 @@
   <tbody>
 
   <?php
-  $crud=new crud();
-  // $crud->checkcon_db();
-  $crud->get_all();
-  while($row=$crud->result->fetch_assoc()){
+  $budget=new Budget();
+  $budget->get_all();
+  while($row=$budget->result->fetch_assoc()){
    ?>
 <tr>
       <th scope="row"><?php echo $row['id']?></th>
