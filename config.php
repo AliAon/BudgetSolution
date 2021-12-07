@@ -25,9 +25,7 @@ public function checkcon_db(){
 
     if ($this->mysqli->connect_error) {
         /* Use your preferred error logging method here */
-        error_log('Connection error: ' . $this->mysqli->connect_error);
-    }else{
-        echo 'connected';
+        echo ('Connection error: ' . $this->mysqli->connect_error);
     }
   
 }
