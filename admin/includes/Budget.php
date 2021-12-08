@@ -1,7 +1,6 @@
-<?php
-require_once 'config.php';
+<?php require_once 'database.php';
 
-class Budget extends db_conntection {
+class Budget extends database {
    
     public $row;
     //get all
