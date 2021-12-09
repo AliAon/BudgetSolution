@@ -1,21 +1,18 @@
 <?php 
 include('config.php');
-
-
 class database{
     //msql-connection
 
     public $mysqli;
-    public $result;
   public function __construct() {
   
-    $this->registor();
+    $this->db_connection();
 }
 
 //conection registor
 
 
-public function registor() {
+public function db_connection() {
 
   $this->mysqli= new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -24,7 +21,7 @@ public function registor() {
 }
 
 //check connection
-public function checkcon_db(){
+public function check_db_connection(){
 
     if ($this->mysqli->connect_error) {
         /* Use your preferred error logging method here */

@@ -47,7 +47,12 @@
 <h2 class='mt-5 mb-5 text-center'> Budget Solution </h2>
 
 <!-- table start -->
-
+<?php
+// $budget=new Budget();
+// $budget->update('khal',2,1200,10);
+// $row=$result->fetch_assoc();
+// echo $row['item'];
+?>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -61,8 +66,8 @@
 
   <?php
   $budget=new Budget();
-  $budget->get_all();
-  while($row=$budget->result->fetch_assoc()){
+  $result=$budget->get_all();
+  while($row=$result->fetch_assoc()){
    ?>
 <tr>
       <th scope="row"><?php echo $row['id']?></th>
