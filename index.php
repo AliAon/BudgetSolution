@@ -1,5 +1,8 @@
 
-<?php require_once 'admin/includes/Budget.php';?>
+<?php require_once 'admin/includes/init.php';
+      
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -45,7 +48,6 @@
 <!-- end header -->
 <div class="container ">
 <h2 class='mt-5 mb-5 text-center'> Budget Solution </h2>
-
 <!-- table start -->
 <?php
 // $budget=new Budget();
@@ -63,27 +65,49 @@
     </tr>
   </thead>
   <tbody>
+  <div class="overflow-auto">
 
   <?php
   $budget=new Budget();
   $result=$budget->get_all();
-  while($row=$result->fetch_assoc()){
+  while($row=$result->fetch_object()){
    ?>
 <tr>
-      <th scope="row"><?php echo $row['id']?></th>
-      <td><?php echo $row['item']?></td>
-      <td><?php echo $row['quantity']?></td>
-      <td><?php echo $row['price']?></td>
+      <th scope="row"><?php echo $row->id?></th>
+      <td><?php echo $row->item?></td>
+      <td><?php echo $row->quantity?></td>
+      <td><?php echo $row->price?></td>
     </tr>
  <?php
    }
  ?>
-    
+    </div>
+
   </tbody>
 </table>
-
 <!-- end table -->
+<!--insert Budget -->
+
+<form action="admin/controller/budget/add.php" method="post">
+          <div class="input-group">
+            <input type="text" aria-label="Item" name="item" placeholder="Item Name" class="form-control">
+            <input type="number" aria-label="Price"  name="quantity" placeholder="Quantity" class="form-control">
+            <input type="number" aria-label="Total Price" name="price" placeholder="Price" class="form-control">
+            <button class="btn btn-outline-secondary" type="submit" name="submit" id="button-addon2">Add Item</button>
+        </div>
+            </form>
+<!-- end_insert -->
+<!-- reset -->
+<form action="" method="" name="reset">
+                <div class="input-group pt-5" >
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon4">Reset</button>
+                </div>
+             </form>
+
+<!-- end reset -->
 </div>
+
+
 <!-- 
 footer -->
 <div class="container-fluid bg-dark mt-5">

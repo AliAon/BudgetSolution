@@ -1,5 +1,5 @@
-<?php require_once 'database.php';
-
+<?php 
+require_once 'database.php';
 class Budget extends database {
    
     public $row;
@@ -28,12 +28,9 @@ class Budget extends database {
 
        public function create($item,$quantity,$price){
         $this->result=$this->mysqli->query("INSERT INTO fertilizer (item,quantity,price) VALUES('{$item}','{$quantity}','{$price}')" );
-        if($this->result){
-          echo 'Added Successfully';
-        }else{
-          echo 'query failed';
+        if(!$this->result){
+          echo 'query Successfully failed';
         }
-
         }
 
         // update
