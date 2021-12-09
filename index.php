@@ -62,6 +62,9 @@
       <th scope="col">Title</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+
     </tr>
   </thead>
   <tbody>
@@ -76,7 +79,17 @@
       <th scope="row"><?php echo $row->id?></th>
       <td><?php echo $row->item?></td>
       <td><?php echo $row->quantity?></td>
-      <td><?php echo $row->price?></td>
+      <td><?php echo $row->price?></td>  
+      <td><form action="" method="" name="bg_edit">
+                <div class="input-group" >
+            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Edit</button>
+                </div>
+             </form></td>
+             <td><form action="" method="" name="bg_delete">
+                <div class="input-group" >
+            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Delete</button>
+                </div>
+             </form></td>
     </tr>
  <?php
    }
