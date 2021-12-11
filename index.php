@@ -21,7 +21,7 @@
   <body>
       <!-- header -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Budget Solution</a>
+  <a class="navbar-brand" href="index.php">Budget Solution</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -80,16 +80,18 @@
       <td><?php echo $row->item?></td>
       <td><?php echo $row->quantity?></td>
       <td><?php echo $row->price?></td>  
-      <td><form action="" method="" name="bg_edit">
+      <td>
                 <div class="input-group" >
-            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Edit</button>
+<a href="index.php?id=<?php echo $row->id?>">
+           <button class="btn btn-outline-danager" type="submit" id="button-addon4">Edit</button></a> 
                 </div>
-             </form></td>
-             <td><form action="" method="" name="bg_delete">
+             </td>
+             <td>
                 <div class="input-group" >
-            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Delete</button>
+                <a href="admin/delete.php?id=<?php echo $row->id?>">
+           <button class="btn btn-outline-danager" type="submit" id="button-addon4">Delete</button></a>
                 </div>
-             </form></td>
+             </td>
     </tr>
  <?php
    }
@@ -100,12 +102,24 @@
 </table>
 <!-- end table -->
 <!--insert Budget -->
+<?php
+if(isset($_GET['id'])){
+  $id=$_GET['id'];
+  $budget=new Budget();
+  $result=$budget->findbyid($id);
+  $row=$result->fetch_object(); 
+}
 
-<form action="admin/controller/budget/add.php" method="post">
+
+
+?>
+<form action="admin/add.php" method="post">
           <div class="input-group">
-            <input type="text" aria-label="Item" name="item" placeholder="Item Name" class="form-control">
-            <input type="number" aria-label="Price"  name="quantity" placeholder="Quantity" class="form-control">
-            <input type="number" aria-label="Total Price" name="price" placeholder="Price" class="form-control">
+          <input type="hidden" aria-label="Item" name="id" placeholder="Item Name" value='<?php if(isset($row)){echo $row->id;}?>' class="form-control">
+
+            <input type="text" aria-label="Item" name="item" placeholder="Item Name" value='<?php if(isset($row)){echo $row->item;}?>' class="form-control">
+            <input type="number" aria-label="Price"  name="quantity" placeholder="Quantity" value='<?php if(isset($row)){ echo $row->quantity;}?>'class="form-control">
+            <input type="number" aria-label="Total Price" name="price" placeholder="Price" value='<?php  if(isset($row)){ echo $row->price;}?>' class="form-control">
             <button class="btn btn-outline-secondary" type="submit" name="submit" id="button-addon2">Add Item</button>
         </div>
             </form>

@@ -1,5 +1,4 @@
 <?php 
-require_once('admin/config.php');
 class database{
     //msql-connection
 
