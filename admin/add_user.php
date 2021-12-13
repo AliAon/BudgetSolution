@@ -153,7 +153,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                <li>
+                    <li>
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                    
@@ -164,7 +164,7 @@
                                 <a href="Users.php">All User</a>
                             </li>
                             <li>
-                                <a href="add_user.php">Add New User</a>
+                                <a href="#">Add New User</a>
                             </li>
                         </ul>
                     </li>
@@ -184,7 +184,7 @@
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                     </li>
                     <li class="active">
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                        <a href="Users-page.html"><i class="fa fa-fw fa-file"></i> Users Page</a>
                     </li>
                     <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
@@ -202,22 +202,48 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Blank Page
-                            <small>Subheading</small>
+                            Users 
+                            <small>Dashboard</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
+                                <i class="fa fa-file"></i> Users 
                             </li>
                         </ol>
-
+                        <h2 class="page-header">
+                        <a href="delete_user.php?id=">
+                        <button class="btn btn-outline-danager" type="submit" id="button-addon4">Add New User</button>
+    </a>                    
+                        </h2>
                            <!-- Page Content -->
 
-                      
-                          
+         <form action='upload.php'  method="post" enctype="multipart/form-data"> 
+                      <div class="form-group">
+                     <label for="exampleInputEmail1">Username</label>
+                      <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                 <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+                 </div>
+         
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Image</label>
+    <input type="file" class="form-control-file" name="user_image" id="exampleFormControlFile1">
+  </div>
+
+      <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" name="user_email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control"  name="user_pass" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  
+  <button type="submit" class="btn btn-primary" name="submit">Add</button>
+</form>
 
                          
 

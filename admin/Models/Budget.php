@@ -1,5 +1,5 @@
 <?php 
-class Budget extends database {
+class Budget extends Database {
    
     public $row;
     public $result;
@@ -28,7 +28,7 @@ class Budget extends database {
        public function create($item,$quantity,$price){
         $this->result=$this->mysqli->query("INSERT INTO fertilizer (item,quantity,price) VALUES('{$item}','{$quantity}','{$price}')" );
         if(!$this->result){
-          echo 'query Successfully failed';
+          echo 'query  failed';
         }
         }
 

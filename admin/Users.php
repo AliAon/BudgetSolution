@@ -153,7 +153,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                <li>
+                    <li>
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                    
@@ -184,7 +184,7 @@
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                     </li>
                     <li class="active">
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                        <a href="Users-page.html"><i class="fa fa-fw fa-file"></i> Users Page</a>
                     </li>
                     <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
@@ -202,22 +202,65 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Blank Page
-                            <small>Subheading</small>
+                            Users 
+                            <small>Dashboard</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
+                                <i class="fa fa-file"></i> Users 
                             </li>
                         </ol>
-
+                        <h2 class="page-header">
+                        <a href="delete_user.php?id=">
+                        <button class="btn btn-outline-danager" type="submit" id="button-addon4">Add New User</button>
+    </a>                    
+                        </h2>
                            <!-- Page Content -->
 
                       
-                          
+                           <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            <?php 
+                           $user=new User();
+                           $result=$user->get_all();
+                           while($row=$result->fetch_object()){
+                            ?>
+                           
+                                <tr>
+                                <th scope="row"><?php echo $row->user_id?></th>
+                                <td><img src="<?php echo $row->user_image?>" alt="" class="img-thumbnail"></td>
+                                <td><?php echo $row->username?></td>
+                                <td><?php echo $row->user_email ?></td>
+                                <td>
+                                <a href="index.php?id=<?php echo $row->user_id?>">
+           <button class="btn btn-outline-danager" type="submit" id="button-addon4">Edit</button></a> 
+           <a href="delete_user.php?id=<?php echo $row->user_id?>">
+           <button class="btn btn-outline-danager" type="submit" id="button-addon4">Delete</button></a>
+                </td>
+                                </tr>
+
+
+                                <tr>
+                                     <?php
+   }
+ ?>
+                              
+                                
+                            </tbody>
+                            </table>
 
                          
 

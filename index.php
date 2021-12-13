@@ -58,12 +58,12 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">ID</th>
+      
       <th scope="col">Title</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
+      <th scope="col">Action</th>
+      
 
     </tr>
   </thead>
@@ -76,17 +76,17 @@
   while($row=$result->fetch_object()){
    ?>
 <tr>
-      <th scope="row"><?php echo $row->id?></th>
+     
       <td><?php echo $row->item?></td>
       <td><?php echo $row->quantity?></td>
       <td><?php echo $row->price?></td>  
-      <td>
-                <div class="input-group" >
+      <td class='text-center'>
+                <div class="input-group mb-2" >
 <a href="index.php?id=<?php echo $row->id?>">
            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Edit</button></a> 
                 </div>
-             </td>
-             <td>
+            
+          
                 <div class="input-group" >
                 <a href="admin/delete.php?id=<?php echo $row->id?>">
            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Delete</button></a>
