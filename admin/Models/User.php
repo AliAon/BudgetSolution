@@ -1,9 +1,11 @@
 <?php 
+session_start();
 class User extends Database {
    
     public $row;
     public $result;
     public $db_table='user';
+    public $user_result;
 
     //get all
     public  function get_all(){
@@ -37,11 +39,12 @@ class User extends Database {
 
         // update
 
-        public function update($username,$email,$password,$id){
+        public function update($username,$email,$password,$uploadfile,$id){
+
+          $imagepath=$this->mysqli->real_escape_string($uploadfile);
 
 
-
-          $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET username='{$username}', email='{$email}',password='{$user_email}' WHERE user_id=$id;" );
+          $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET username='{$username}', user_image='{$imagepath}',user_email='{$email}',user_password='{$password}' WHERE user_id=$id;" );
           if($this->result){
             echo 'Updated Successfully';
           }else{
@@ -61,10 +64,18 @@ class User extends Database {
       }
       //login
 
-      public function login($id){
-        $this->result=$this->mysqli->query("DELETE FROM ".$this->db_table." Where user_id= $id" );
-        
+      public function login($user_email,$user_pass){
 
+
+        $this->result=$this->mysqli->query("SELECT * FROM ".$this->db_table." Where user_email='{$user_email}'" );
+        $row=$this->result->fetch_object();
+        
+        if($row->user_email===$user_email && $row->user_pass==$user_password){
+          header('Location:index.php');
+          $_SESSION['user_id']=$row->user_id;
+        }else{
+          echo 'credentials invalid';
+        }
       }
       
       public function logout($id){

@@ -12,8 +12,6 @@ if(empty($id)){
     header('Location:../index.php');
 }else{
 $buget=new Budget();
-$result=$buget->findbyid($id);
-$row=$result->fetch_object();
 $buget->update($item,$quantity,$price,$id);
     header('Location:../index.php');
 

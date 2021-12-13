@@ -34,7 +34,6 @@
       <li class="nav-item">
         <a class="nav-link" href="#">About US</a>
       </li>
-    
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Contact Us</a>
       </li>
