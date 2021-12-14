@@ -33,33 +33,52 @@
 if(isset($_GET['id'])){
   $id=$_GET['id'];
   $post=new Post();
-  $result=$User->findbyid($id);
-  $row=$result->fetch_object();
-} ?>
+  $result=$post->findbyid($id);
+ $row_by_id=$result->fetch_object();
+  
+} 
+
+ ?>
+
+
 
 
          <form action='upload_post.php'  method="post" enctype="multipart/form-data"> 
+         <input type="hidden" aria-label="Item" name="id" placeholder="Item Name" value='<?php if(isset($row_by_id)){echo $row_by_id->post_id;}?>' class="form-control">
+
                       <div class="form-group">
                       <label for="exampleInputTitle">Post Title</label>
-                      <input type="text" name="post_title" class="form-control" value='<?php if(isset($row)){echo $row->username;}?>' id="exampleInputTitle" aria-describedby="emailHelp" placeholder="Enter Title">
+                      <input type="text" name="post_title" class="form-control" value='<?php if(isset($row_by_id)){echo $row_by_id->post_title;}?>'  id="exampleInputTitle" aria-describedby="emailHelp" placeholder="Enter Title">
                   </div>
          
   <div class="form-group">
     <label for="exampleFormControlPublished">Published At</label>
-    <input type="text" class="form-control" name="create_time" id="exampleFormControlPublished" placeholder="Date">
+    <input type="date" class="form-control" name="create_time"  id="exampleFormControlPublished" placeholder="Date">
   </div>
 
       <div class="form-group">
-    <label for="exampleInputCategory">Category</label>
-    <input type="text" class="form-control" name="category_id" value='<?php if(isset($row)){echo $row->user_email;}?>' id="exampleInputCategory" aria-describedby="emailHelp" placeholder="Select Category">
-   
+    <label for="exampleInputCategory">Categories</label>
+    <select class="form-control form-select"  name="category_id" aria-label=".form-select-sm example">
+        <?php
+        $Category=new Categories();
+        $result=$Category->get_all();
+        while($row=$result->fetch_object()){
+        ?>
+        
+        <option value="<?php echo $row->category_id;?>"><?php echo $row->name ?></option>
+       
+        
+        <?php    
+        }
+        ?>
+</select>
   </div>
   <div class="form-group">
     <label for="exampleInputContent">Content</label>
-    <input type="text" class="form-control"  name="post_content" value='<?php if(isset($row)){echo $row->user_password;}?>'  id="exampleInputContent" placeholder="Content">
-  </div>
+    <textarea class="form-control"  name="post_content"   id="exampleFormControlTextarea1" rows="5"><?php if(isset($row_by_id)){echo $row_by_id->post_content;}?></textarea>
+ </div>
   
-  <button type="submit" class="btn btn-primary" name="submit">Add</button>
+  <button type="submit" class="btn btn-primary" name="submit">Add Post</button>
 </form>
 
                          

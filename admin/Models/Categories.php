@@ -17,7 +17,7 @@ class Categories extends Database {
 
       public function findbyid($id){
 
-        $this->result=$this->mysqli->query("SELECT * FROM ".$this->db_table." Where user_id= $id" );
+        $this->result=$this->mysqli->query("SELECT * FROM ".$this->db_table." Where category_id= $id" );
 
         return $this->result;
 
@@ -28,11 +28,9 @@ class Categories extends Database {
 
       //create
 
-       public function create($username,$user_email,$user_pass,$uploadfile){
-         echo $uploadfile;
-         $imagepath=$this->mysqli->real_escape_string($uploadfile);
+       public function create($name){
 
-         $this->result=$this->mysqli->query("INSERT INTO  " .$this->db_table. " (username,user_image,user_email,user_password) VALUES('{$username}','{$imagepath}','{$user_email}','{$user_pass}')" );
+         $this->result=$this->mysqli->query("INSERT INTO  " .$this->db_table. " (name) VALUES('{$name}')" );
         if(!$this->result){
           echo 'query  failed';
         }
@@ -40,12 +38,10 @@ class Categories extends Database {
 
         // update
 
-        public function update($username,$email,$password,$uploadfile,$id){
+        public function update($name,$id){
 
-          $imagepath=$this->mysqli->real_escape_string($uploadfile);
-
-
-          $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET username='{$username}', user_image='{$imagepath}',user_email='{$email}',user_password='{$password}' WHERE user_id=$id;" );
+         
+          $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET name='{$name}' WHERE category_id=$id;" );
           if($this->result){
             echo 'Updated Successfully';
           }else{
@@ -57,13 +53,12 @@ class Categories extends Database {
         
       // delete by id
       public function delete($id){
-        $this->result=$this->mysqli->query("DELETE FROM ".$this->db_table." Where user_id= $id" );
+        $this->result=$this->mysqli->query("DELETE FROM ".$this->db_table." Where category_id= $id" );
         if($this->result){
           echo 'Removed Successfully';
         }
 
       }
-      //login
 
     
       

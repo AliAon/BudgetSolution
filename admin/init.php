@@ -11,6 +11,7 @@ require_once Models_path.DS.'User.php';
 require_once Models_path.DS.'Session.php';
 require_once Models_path.DS.'Post.php';
 require_once Models_path.DS.'Categories.php';
+require_once Models_path.DS.'Comments.php';
 
 
 ?>

@@ -65,14 +65,17 @@ class User extends Database {
       //login
 
       public function login($user_email,$user_pass){
-
+   
 
         $this->result=$this->mysqli->query("SELECT * FROM ".$this->db_table." Where user_email='{$user_email}'" );
         $row=$this->result->fetch_object();
+        // echo $row->user_password;
         
-        if($row->user_email===$user_email && $row->user_pass==$user_password){
-          header('Location:index.php');
+        // echo $user_pass;
+        if($row->user_email==$user_email && $row->user_password==$user_pass){
           $_SESSION['user_id']=$row->user_id;
+          header('Location:index.php');
+     //    
         }else{
           header('Location:login.php');
         }

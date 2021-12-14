@@ -33,15 +33,17 @@
 if(isset($_GET['id'])){
   $id=$_GET['id'];
   $Category=new Categories();
-//   $result=$Category->findbyid($id);
-//   $row=$result->fetch_object();
+   $result=$Category->findbyid($id);
+   $row=$result->fetch_object();
 } ?>
 
 
-         <form action='upload_post.php'  method="post" enctype="multipart/form-data"> 
+         <form action='upload_category.php'  method="post" enctype="multipart/form-data"> 
+         <input type="hidden" aria-label="Item" name="id" placeholder="Item Name" value='<?php if(isset($row)){echo $row->category_id;}?>' class="form-control">
+
                       <div class="form-group">
                       <label for="exampleInputTitle">Category Title</label>
-                      <input type="text" name="name" class="form-control"  id="exampleInputTitle" aria-describedby="emailHelp" placeholder="Enter Title">
+                      <input type="text" name="name" class="form-control" value='<?php if(isset($row)){echo $row->name;}?> ' id="exampleInputTitle" aria-describedby="emailHelp" placeholder="Enter Title">
                   </div>
          
  

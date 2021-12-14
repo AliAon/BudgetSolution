@@ -4,7 +4,7 @@
 $Category=new Categories();
 echo $_GET['id'];
 $Category->delete($_GET['id']);
-header('Location:post_categories.php');
+header('Location:post_categoies.php');
 
 
 ?>

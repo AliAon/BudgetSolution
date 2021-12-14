@@ -2,10 +2,8 @@
 require_once "init.php";
 if(isset($_POST['submit'])){
     $id=$_POST['id'];
-     $post_title=$_POST['post_title'];
-    $create_time= $_POST['create_time'];
-    $category_id= $_POST['category_id'];
-    $post_content= $_POST['post_content'];
+     $name=$_POST['name'];
+   
 
     
 
@@ -27,13 +25,13 @@ if(isset($_POST['submit'])){
        
 
     if(empty($id)){
-        $Post=new Post();
-        $Post->create($post_title,$create_time,$category_id,$post_content);
-        header('Location:Posts.php');
+        $Categories=new Categories();
+        $Categories->create($name);
+        header('Location:post_categoies.php');
     }else{
-    $Post=new Post();
-    $Post->update($post_title,$create_time,$category_id,$post_content,$id);
-    header('Location:Posts.php');
+    $Categories=new Categories();
+    $Categories->update($name,$id);
+    header('Location:post_categoies.php');
 
     
     }
