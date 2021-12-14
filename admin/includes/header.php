@@ -1,8 +1,8 @@
 <?php require_once 'init.php';
-// $session=new Session();
-// if(!$session->signedin()){
-// header('location:login.php');
-// }
+$session=new Session();
+if(!$session->signedin()){
+header('location:login.php');
+}
 ?>
 
 <!DOCTYPE html>

@@ -17,6 +17,7 @@
       <th scope="col">Title</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
+      <th scope="col">Total</th>
       <th scope="col">Action</th>
       
 
@@ -28,13 +29,16 @@
   <?php
   $budget=new Budget();
   $result=$budget->get_all();
+  
   while($row=$result->fetch_object()){
+    $total=$row->quantity*$row->price;
    ?>
 <tr>
      
       <td><?php echo $row->item?></td>
       <td><?php echo $row->quantity?></td>
       <td><?php echo $row->price?></td>  
+      <td><?php echo  $total?></td>  
       <td class='text-center'>
                 <div class="input-group mb-2" >
 <a href="index.php?id=<?php echo $row->id?>">
@@ -49,6 +53,7 @@
              </td>
     </tr>
  <?php
+ $total=0;
    }
  ?>
     </div>
