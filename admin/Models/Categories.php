@@ -1,16 +1,15 @@
 <?php 
-session_start();
-class User extends Database {
+class Categories extends Database {
    
     public $row;
     public $result;
-    public $db_table='user';
+    public $db_table='category';
     public $user_result;
 
     //get all
     public  function get_all(){
+        
         $this->result=$this->mysqli->query("SELECT * FROM ".$this->db_table);
-
         return $this->result;
        
       }
@@ -24,6 +23,8 @@ class User extends Database {
 
 
       }
+        // find cate_name by id
+
 
       //create
 
@@ -64,26 +65,9 @@ class User extends Database {
       }
       //login
 
-      public function login($user_email,$user_pass){
-
-
-        $this->result=$this->mysqli->query("SELECT * FROM ".$this->db_table." Where user_email='{$user_email}'" );
-        $row=$this->result->fetch_object();
-        
-        if($row->user_email===$user_email && $row->user_pass==$user_password){
-          header('Location:index.php');
-          $_SESSION['user_id']=$row->user_id;
-        }else{
-          header('Location:login.php');
-        }
-      }
+    
       
-      public function logout($id){
-        $this->result=$this->mysqli->query("DELETE FROM ".$this->db_table." Where user_id= $id" );
-        
-
-      }
-      
+     
 
 
     

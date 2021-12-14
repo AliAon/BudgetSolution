@@ -15,15 +15,15 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-file"></i> Users 
+                                <i class="fa fa-file"></i> Categories 
                             </li>
                         </ol>
                         <h2 class="page-header">
-                        <a href="add_user.php">
-                        <button class="btn btn-outline-danager" type="submit" id="button-addon4">Add New User</button>
+                        <a href="add_category.php">
+                        <button class="btn btn-outline-danager" type="submit" id="button-addon4">Add New Category</button>
     </a>                    
                         </h2>
                            <!-- Page Content -->
@@ -32,9 +32,9 @@
                             <thead class="thead-dark">
                                 <tr>
                                 
-                                <th scope="col">Image</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Category Title</th>
+                                <th scope="col">Post Count</th>
+                        
                                 <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -42,20 +42,19 @@
                                 
                             <?php 
                            
-                           $user=new User();
-                           $result=$user->get_all();
+                           $Category=new Categories();
+                           $result=$Category->get_all();
                            while($row=$result->fetch_object()){
                             ?>
                            
                                 <tr>
                                 
-                                <td><img src="<?php echo $row->user_image?>" alt="" width="100px" class="img-thumbnail"></td>
-                                <td><?php echo $row->username?></td>
-                                <td><?php echo $row->user_email ?></td>
+                                <td><?php echo $row->name?></td>
+                                <td></td>
                                 <td>
-                                <a href="add_user.php?id=<?php echo $row->user_id?>">
+                                <a href="add_category.php?id=<?php echo $row->category_id?>">
            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Edit</button></a> 
-           <a href="delete_user.php?id=<?php echo $row->user_id?>">
+           <a href="delete_category.php?id=<?php echo $row->category_id?>">
            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Delete</button></a>
                 </td>
                                 </tr>

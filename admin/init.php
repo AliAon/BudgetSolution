@@ -9,6 +9,8 @@ require_once Models_path.DS.'Database.php';
 require_once Models_path.DS.'Budget.php';
 require_once Models_path.DS.'User.php';
 require_once Models_path.DS.'Session.php';
+require_once Models_path.DS.'Post.php';
+require_once Models_path.DS.'Categories.php';
 
 
 ?>

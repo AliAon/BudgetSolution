@@ -1,6 +1,7 @@
 <?php include('includes/header.php')?>
 
 
+          
 
         <div id="page-wrapper">
 
@@ -10,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Users 
+                            Posts 
                             <small>Dashboard</small>
                         </h1>
                         <ol class="breadcrumb">
@@ -18,12 +19,12 @@
                                 <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-file"></i> Users 
+                                <i class="fa fa-file"></i> Posts 
                             </li>
                         </ol>
                         <h2 class="page-header">
-                        <a href="add_user.php">
-                        <button class="btn btn-outline-danager" type="submit" id="button-addon4">Add New User</button>
+                        <a href="add_post.php">
+                        <button class="btn btn-outline-danager" type="submit" id="button-addon4">Add New Post</button>
     </a>                    
                         </h2>
                            <!-- Page Content -->
@@ -32,30 +33,37 @@
                             <thead class="thead-dark">
                                 <tr>
                                 
-                                <th scope="col">Image</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Post ID</th>
+                                <th scope="col">Post Title</th>
+                                <th scope="col">Post Content</th>
+                                <th scope="col">Published At</th>
+                                <th scope="col">Category ID</th>
+                                <th scope="col">Author ID</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
-                            <?php 
-                           
-                           $user=new User();
-                           $result=$user->get_all();
-                           while($row=$result->fetch_object()){
+                                <?php
+                        $post=new Post();
+                        $result=$post->get_all();
+                      
+                        while($row=$result->fetch_object()){
+                        
                             ?>
                            
                                 <tr>
                                 
-                                <td><img src="<?php echo $row->user_image?>" alt="" width="100px" class="img-thumbnail"></td>
-                                <td><?php echo $row->username?></td>
-                                <td><?php echo $row->user_email ?></td>
+                                 <td><?php echo $row->post_id?></td>
+                                <td><?php echo $row->post_title ?></td>
+                                
+                                <td><?php echo $row->post_content ?></td>
+                               
+                                <td><?php echo $row->create_time ?></td>
+                                <td><?php echo$row->name ?></td>
+                                <td><?php echo$row->username ?></td>
                                 <td>
-                                <a href="add_user.php?id=<?php echo $row->user_id?>">
+                                <a href="add_post.php?id=<?php echo $row->post_id?>">
            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Edit</button></a> 
-           <a href="delete_user.php?id=<?php echo $row->user_id?>">
+           <a href="delete_post.php?id=<?php echo $row->post_id?>">
            <button class="btn btn-outline-danager" type="submit" id="button-addon4">Delete</button></a>
                 </td>
                                 </tr>
@@ -65,7 +73,7 @@
                                      <?php
    }
  ?>
-                              
+                 
                                 
                             </tbody>
                             </table>
