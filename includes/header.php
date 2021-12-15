@@ -14,7 +14,7 @@
     
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-
+ <!-- Custom CSS -->
     <title>Budget Solution</title>
   </head>
   <body>
@@ -32,6 +32,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About US</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="blog.php">Blog</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Contact Us</a>
