@@ -17,8 +17,7 @@
 
     <!-- CSS
 	============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Fontawesome -->
@@ -40,9 +39,6 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-       <!-- Bootstrap CSS -->
-    
-    
 
 </head>
 
@@ -51,23 +47,142 @@
     <div class="main-wrapper">
 
 
-        <!-- Begin Main Header Area -->
-        <header class="main-header_area">
-            <div class="transparent-header">
+        <!-- Begin Main Header Area Two -->
+        <header class="main-header_area-2">
+            <div class="header-top_area d-none d-lg-block">
+                <div class="container">
+                    <div class="header-top_nav">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="ht-menu">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Currency<i class="ion-chevron-down"></i></a>
+                                            <ul class="ht-dropdown ht-currency">
+                                                <li><a href="javascript:void(0)">€ EUR</a></li>
+                                                <li class="active"><a href="javascript:void(0)">£ Pound Sterling</a></li>
+                                                <li><a href="javascript:void(0)">$ Us Dollar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="javascript:void(0)">Language <i class="ion-chevron-down"></i></a>
+                                            <ul class="ht-dropdown">
+                                                <li class="active"><a href="javascript:void(0)"><img src="assets/images/menu/icon/1.jpg" alt="Kenne Language Icon">English</a></li>
+                                                <li><a href="javascript:void(0)"><img src="assets/images/menu/icon/2.jpg" alt="Kenne Language Icon">Français</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="header-top_right">
+                                    <ul>
+                                        <li>
+                                            <a href="my-account.php">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="wishlist.php">Wishlist</a>
+                                        </li>
+                                        <li>
+                                            <a href="login-register.php">Register or Sign in</a>
+                                        </li>
+                                        <li>
+                                            <a href="checkout.php">Checkout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle_area">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="transparent-header_nav position-relative">
+                            <div class="header-middle_nav">
                                 <div class="header-logo_area">
                                     <a href="index.php">
                                         <h1> Store CMS</h1>
-                                       
+                                        <!-- <img src="assets/images/menu/logo/1.png" alt="Header Logo"> -->
                                     </a>
                                 </div>
-                                <div class="main-menu_area d-none d-lg-block">
-                                    <nav class="main-nav d-flex justify-content-center">
-                                        <ul>
-                                            <li class="dropdown-holder"><a href="index.php">Home</a>
+                                <div class="header-contact d-none d-md-flex">
+                                    <i class="fa fa-headphones-alt"></i>
+                                    <div class="contact-content">
+                                        <p>
+                                            Call us
+                                            <br>
+                                        Free Support: (012) 800 456 789
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="header-search_area d-none d-lg-block">
+                                    <form class="search-form" action="#">
+                                        <input type="text" placeholder="Search">
+                                        <button class="search-button"><i class="ion-ios-search"></i></button>
+                                    </form>
+                                </div>
+                                <div class="header-right_area d-none d-lg-inline-block">
+                                    <ul>
+                                        <li class="mobile-menu_wrap d-flex d-lg-none">
+                                            <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white">
+                                                <i class="ion-android-menu"></i>
+                                            </a>
+                                        </li>
+                                        <li class="minicart-wrap">
+                                            <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                                <div class="minicart-count_area">
+                                                    <span class="item-count">03</span>
+                                                    <i class="ion-bag"></i>
+                                                </div>
+                                                <div class="minicart-front_text">
+                                                    <span>Cart:</span>
+                                                    <span class="total-price">462.4</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="header-right_area header-right_area-2 d-inline-block d-lg-none">
+                                    <ul>
+                                        <li class="mobile-menu_wrap d-inline-block d-lg-none">
+                                            <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white">
+                                                <i class="ion-android-menu"></i>
+                                            </a>
+                                        </li>
+                                        <li class="minicart-wrap">
+                                            <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                                <div class="minicart-count_area">
+                                                    <span class="item-count">03</span>
+                                                    <i class="ion-bag"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#searchBar" class="search-btn toolbar-btn">
+                                                <i class="pe-7s-search"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#offcanvasMenu" class="menu-btn toolbar-btn color--white d-none d-lg-block">
+                                                <i class="ion-android-menu"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom_area d-none d-lg-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main-menu_area position-relative">
+                                <nav class="main-nav d-flex justify-content-center">
+                                    <ul>
+                                    <li class="dropdown-holder"><a href="index.php">Home</a>
                                                 
                                             </li>
                                             <li><a href="shop-left-sidebar.php">Shop</a></li>
@@ -89,36 +204,8 @@
                                            
                                             <li><a href="contact-us.php">Contact Us</a></li>
                                             <li><a href="about-us.php">About Us</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="header-right_area header-right_area-2">
-                                    <ul>
-                                        <li class="mobile-menu_wrap d-inline-block d-lg-none">
-                                            <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white">
-                                                <i class="ion-android-menu"></i>
-                                            </a>
-                                        </li>
-                                        <li class="minicart-wrap">
-                                            <a href="#miniCart" class="minicart-btn toolbar-btn">
-                                                <div class="minicart-count_area">
-                                                    <span class="item-count">03</span>
-                                                    <i class="ion-bag"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#searchBar" class="search-btn toolbar-btn">
-                                                <i class="ion-ios-search"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#offcanvasMenu" class="menu-btn toolbar-btn color--white d-none d-lg-block">
-                                                <i class="ion-android-menu"></i>
-                                            </a>
-                                        </li>
                                     </ul>
-                                </div>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -144,7 +231,6 @@
                                                 <li class="dropdown-holder"><a href="index.php">Home</a>
                                                 
                                                 </li>
-                                                <li><a href="about-us.php">About Us</a></li>
                                                 <li><a href="shop-left-sidebar.php">Shop</a></li>
                                                 <!-- <li><a href="single-product.php">Single Product</a></li> -->
                                                 <li><a href="blog-grid_view.php">Blog</a></li>
@@ -160,10 +246,9 @@
                                                                 <li><a href="compare.php">Compare</a></li>
                                                     </ul>
                                                 </li>
-                                                    
-                                                  
-                                                    <li><a href="contact-us.php">Contact Us</a></li>
-                                                   
+                                               
+                                                <li><a href="contact-us.php">Contact Us</a></li>
+                                                <li><a href="about-us.php">About Us</a></li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -186,7 +271,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#searchBar" class="search-btn toolbar-btn">
-                                                        <i class="ion-ios-search"></i>
+                                                        <i class="ion-android-search"></i>
                                                     </a>
                                                 </li>
                                                 <li class="d-none d-lg-inline-block">
@@ -279,7 +364,16 @@
                                                 <span class="mm-text">Home One</span>
                                             </a>
                                         </li>
-                                       
+                                        <li>
+                                            <a href="index-2.php">
+                                                <span class="mm-text">Home Two</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="index-3.php">
+                                                <span class="mm-text">Home Three</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
@@ -291,27 +385,83 @@
                                             <a href="#">
                                                 <span class="mm-text">Grid View</span>
                                             </a>
-                                           
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <a href="shop-fullwidth.php">
+                                                        <span class="mm-text">Grid Fullwidth</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-left-sidebar.php">
+                                                        <span class="mm-text">Left Sidebar</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-right-sidebar.php">
+                                                        <span class="mm-text">Right Sidebar</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a href="#">
                                                 <span class="mm-text">Shop List</span>
                                             </a>
                                             <ul class="sub-menu">
-                                               
+                                                <li>
+                                                    <a href="shop-list-fullwidth.php">
+                                                        <span class="mm-text">Full Width</span>
+                                                    </a>
+                                                </li>
                                                 <li>
                                                     <a href="shop-list-left-sidebar.php">
                                                         <span class="mm-text">Left Sidebar</span>
                                                     </a>
                                                 </li>
-                                               
+                                                <li>
+                                                    <a href="shop-list-right-sidebar.php">
+                                                        <span class="mm-text">Right Sidebar</span>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a href="#">
                                                 <span class="mm-text">Single Product Style</span>
                                             </a>
-                                           
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <a href="single-product-gallery-left.php">
+                                                        <span class="mm-text">Gallery Left</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-gallery-right.php">
+                                                        <span class="mm-text">Gallery Right</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-tab-style-left.php">
+                                                        <span class="mm-text">Tab Style Left</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-tab-style-right.php">
+                                                        <span class="mm-text">Tab Style Right</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-sticky-left.php">
+                                                        <span class="mm-text">Sticky Left</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-sticky-right.php">
+                                                        <span class="mm-text">Sticky Right</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
                                         <li class="menu-item-has-children">
                                             <a href="#">
                                                 <span class="mm-text">Single Product Type</span>
@@ -322,8 +472,31 @@
                                                         <span class="mm-text">Single Product</span>
                                                     </a>
                                                 </li>
-                                               
-                                               
+                                                <li>
+                                                    <a href="single-product-sale.php">
+                                                        <span class="mm-text">Single Product Sale</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-group.php">
+                                                        <span class="mm-text">Single Product Group</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-variable.php">
+                                                        <span class="mm-text">Single Product Variable</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-affiliate.php">
+                                                        <span class="mm-text">Single Product Affiliate</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product-slider.php">
+                                                        <span class="mm-text">Single Product Slider</span>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -338,7 +511,11 @@
                                                 <span class="mm-text">Grid View</span>
                                             </a>
                                         </li>
-                                     
+                                        <li class="menu-item-has-children has-children">
+                                            <a href="blog-list_view.php">
+                                                <span class="mm-text">List View</span>
+                                            </a>
+                                        </li>
                                         <li class="menu-item-has-children has-children">
                                             <a href="blog-details.php">
                                                 <span class="mm-text">Blog Details</span>

@@ -95,39 +95,7 @@ if(isset($_GET['id'])){
 </div>
 
 
-<!-- 
-footer -->
-<div class="container-fluid bg-dark mt-5">
-<div class="container ">
-  <div class="row pt-5 pb-5">
-    <div class="col-xl-4 pt-2 pb-2 text-white text-left">
-     <h5>About Us</h5>
-   <p>
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolores, fugiat accusantium rem nam vel voluptate iste alias aut perferendis? Facere inventore debitis omnis quam blanditiis explicabo ea reiciendis nemo.
-   </p>
-    </div>
-    <div class="col-xl-5 pt-2 pb-2 text-white text-center ">
-    <h5>Qucik Links </h5>
-    <ul class="list-group bg-dark">
-    <li class="list-group-item bg-dark">Home</li>
-    <li class="list-group-item bg-dark">About</li>
-    <li class="list-group-item bg-dark">Contact Us</li>
 
-    </ul>
-    </div>
-    <div class="col-xl-3 pt-2 pb-2 text-white ">
-    <h5>Reach Us</h5>   
-    <ul class="list-group bg-dark">
-    <li class="list-group-item bg-dark pl-0">info@example.com</li>
-    <li class="list-group-item bg-dark pl-0">+92105-774-747</li>
-    <li class="list-group-item bg-dark pl-0">Georgia,USA</li>
-
-    </ul>
- </div>
-  </div>
-</div>
-</div>
-<!-- end-footer -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

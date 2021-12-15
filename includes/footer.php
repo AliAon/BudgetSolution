@@ -231,9 +231,9 @@
                                     </div>
                                     <div class="kenne-group_btn">
                                         <ul>
-                                            <li><a href="cart.html" class="add-to_cart">Cart To Cart</a></li>
-                                            <li><a href="cart.html"><i class="ion-android-favorite-outline"></i></a></li>
-                                            <li><a href="cart.html"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                            <li><a href="cart.php" class="add-to_cart">Cart To Cart</a></li>
+                                            <li><a href="cart.php"><i class="ion-android-favorite-outline"></i></a></li>
+                                            <li><a href="cart.php"><i class="ion-ios-shuffle-strong"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="kenne-tag-line">
@@ -323,4 +323,4 @@
 
 </body>
 
-</html>
+</php>
