@@ -16,12 +16,17 @@ class Comments extends Database {
         return $this->result;
        
       }
-  
-      
 
-        
+       // find by post_id
+       public function findbyid($id){
 
-        
+        $this->result=$this->mysqli->query("SELECT * FROM ".$this->db_table." Where post_id= $id" );
+
+        return $this->result;
+
+
+      }
+
       // delete by id
       public function delete($id){
         $this->result=$this->mysqli->query("DELETE FROM ".$this->db_table." Where cmmment_id= $id" );

@@ -1,14 +1,23 @@
         <!-- Main Header Area End Here Two -->
         <?php include('includes/other_header.php')?>
         <!-- Main Header Area End Here Two -->
+<?php
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $post=new Post();
+    $result=$post->findbyid($id);
+    $row=$result->fetch_object();
+  }
 
+
+?>
         <!-- Begin Kenne's Breadcrumb Area -->
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
                     <h2>Blog Details</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li class="active">Left Sidebar</li>
                     </ul>
                 </div>
@@ -41,18 +50,18 @@
                                 <h4 class="kenne-blog-sidebar-title">Recent Posts</h4>
                                 <div class="recent-post">
                                     <div class="recent-post_thumb">
-                                        <a href="blog-details.html">
+                                        <a href="blog-details.php">
                                             <img class="img-full" src="assets/images/blog/1.jpg" alt="Kenne's Blog Image">
                                         </a>
                                     </div>
                                     <div class="recent-post_desc">
-                                        <span><a href="blog-details.html">Ut eum laborum</a></span>
+                                        <span><a href="blog-details.php">Ut eum laborum</a></span>
                                         <span class="post-date">October 25,2019</span>
                                     </div>
                                 </div>
                                 <div class="recent-post">
                                     <div class="recent-post_thumb">
-                                        <a href="blog-details.html">
+                                        <a href="blog-details.php">
                                             <img class="img-full" src="assets/images/blog/2.jpg" alt="Kenne's Blog Image">
                                         </a>
                                     </div>
@@ -63,34 +72,34 @@
                                 </div>
                                 <div class="recent-post">
                                     <div class="recent-post_thumb">
-                                        <a href="blog-details.html">
+                                        <a href="blog-details.php">
                                             <img class="img-full" src="assets/images/blog/3.jpg" alt="Kenne's Blog Image">
                                         </a>
                                     </div>
                                     <div class="recent-post_desc">
-                                        <span><a href="blog-details.html">Possimus reiciendis</a></span>
+                                        <span><a href="blog-details.php">Possimus reiciendis</a></span>
                                         <span class="post-date">October 24,2019</span>
                                     </div>
                                 </div>
                                 <div class="recent-post">
                                     <div class="recent-post_thumb">
-                                        <a href="blog-details.html">
+                                        <a href="blog-details.php">
                                             <img class="img-full" src="assets/images/blog/4.jpg" alt="Kenne's Blog Image">
                                         </a>
                                     </div>
                                     <div class="recent-post_desc">
-                                        <span><a href="blog-details.html">Tortor Posuere</a></span>
+                                        <span><a href="blog-details.php">Tortor Posuere</a></span>
                                         <span class="post-date">October 24,2019</span>
                                     </div>
                                 </div>
                                 <div class="recent-post">
                                     <div class="recent-post_thumb">
-                                        <a href="blog-details.html">
+                                        <a href="blog-details.php">
                                             <img class="img-full" src="assets/images/blog/5.jpg" alt="Kenne's Blog Image">
                                         </a>
                                     </div>
                                     <div class="recent-post_desc">
-                                        <span><a href="blog-details.html">Hello World!</a></span>
+                                        <span><a href="blog-details.php">Hello World!</a></span>
                                         <span class="post-date">October 24,2019</span>
                                     </div>
                                 </div>
@@ -134,8 +143,19 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="kenne-blog-sidebar">
                                 <h4 class="kenne-blog-sidebar-title">Tags</h4>
+                                <ul class="kenne-tags_list">
+                                    <li><a href="javascript:void(0)">Shirt</a></li>
+                                    <li><a href="javascript:void(0)">Hoodie</a></li>
+                                    <li><a href="javascript:void(0)">Jacket</a></li>
+                                    <li><a href="javascript:void(0)">Scarf</a></li>
+                                    <li><a href="javascript:void(0)">Frocks</a></li>
+                                </ul>
+                            </div>
+                            <div class="kenne-blog-sidebar">
+                                <h4 class="kenne-blog-sidebar-title">Categories</h4>
                                 <ul class="kenne-tags_list">
                                     <li><a href="javascript:void(0)">Shirt</a></li>
                                     <li><a href="javascript:void(0)">Hoodie</a></li>
@@ -149,21 +169,18 @@
                     <div class="col-lg-9 order-lg-2 order-1">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img src="assets/images/blog/1.jpg" alt="Blog Image">
+                                <a href="blog-details.php">
+                                    <img src="admin/<?php echo $row->featured_image?>" alt="Blog Image">
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <h3 class="heading">
-                                    <a href="blog-details.html">Blog Image Post</a>
+                                    <a href="blog-details.php"><?php echo $row->post_title?></a>
                                 </h3>
-                                <p class="short-desc">
-                                    The first line of lorem Ipsum: "Lorem ipsum dolor sit amet..", comes from a
-                                    line in section 1.10.32.
-                                </p>
+                               
                                 <div class="blog-meta">
                                     <ul>
-                                        <li>Oct.20.2019</li>
+                                        <li><?php echo $row->create_time?></li>
                                         <li>
                                             <a href="javascript:void(0)">02 Comments</a>
                                         </li>
@@ -171,20 +188,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="kenne-blog-blockquote">
-                            <blockquote>
-                                <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.
-                                </p>
-                            </blockquote>
-                        </div>
+                     
                         <div class="blog-additional_information">
-                            <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.
-                            </p>
+                            <p><?php echo $row->post_content?></p>
                         </div>
-                        <div class="blog-additional_information">
-                            <p>Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.
-                            </p>
-                        </div>
+                       
                         <div class="kenne-tag-line">
                             <h4>Tag:</h4>
                             <a href="javascript:void(0)">chair</a>,

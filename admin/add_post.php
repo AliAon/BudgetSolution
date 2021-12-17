@@ -55,7 +55,10 @@ if(isset($_GET['id'])){
     <label for="exampleFormControlPublished">Published At</label>
     <input type="date" class="form-control" name="create_time"  id="exampleFormControlPublished" placeholder="Date">
   </div>
-
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Image</label>
+    <input type="file" class="form-control-file" name="post_image" id="exampleFormControlFile1">
+  </div>
       <div class="form-group">
     <label for="exampleInputCategory">Categories</label>
     <select class="form-control form-select"  name="category_id" aria-label=".form-select-sm example">

@@ -35,8 +35,8 @@
                                 
                                 <th scope="col">Post ID</th>
                                 <th scope="col">Post Title</th>
-                                <th scope="col">Post Content</th>
-                                <th scope="col">Published At</th>
+                                <th scope="col">Featured Image</th>
+                                <th scope="col">Date</th>
                                 <th scope="col">Category ID</th>
                                 <th scope="col">Author ID</th>
                                 </tr>
@@ -55,7 +55,8 @@
                                  <td><?php echo $row->post_id?></td>
                                 <td><?php echo $row->post_title ?></td>
                                 
-                                <td><?php echo $row->post_content ?></td>
+                                <td><img src="<?php echo $row->featured_image?>" alt="" width="100px" class="img-thumbnail"></td>
+                            
                                
                                 <td><?php echo $row->create_time ?></td>
                                 <td><?php echo$row->name ?></td>

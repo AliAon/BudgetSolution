@@ -30,14 +30,14 @@ class Post extends Database {
 
       //create
 
-       public function create($post_title,$create_time,$category_id,$post_content){
+       public function create($post_title,$create_time,$category_id,$post_content,$uploadfile){
         // echo $uploadfile;
 
         $user_id=$_SESSION['user_id'];
 
-       //  $imagepath=$this->mysqli->real_escape_string($uploadfile);
+         $imagepath=$this->mysqli->real_escape_string($uploadfile);
 
-         $this->result=$this->mysqli->query("INSERT INTO  " .$this->db_table. " (post_title,post_content,create_time,user_id,category_id  ) VALUES('{$post_title}','{$post_content}','{$create_time}','{$user_id}','{$category_id}')" );
+         $this->result=$this->mysqli->query("INSERT INTO  " .$this->db_table. " (post_title,featured_image,post_content,create_time,user_id,category_id  ) VALUES('{$post_title}','{$imagepath}','{$post_content}','{$create_time}','{$user_id}','{$category_id}')" );
         if(!$this->result){
           echo 'query  failed';
         }
@@ -45,11 +45,11 @@ class Post extends Database {
 
         // update
 
-        public function update($post_title,$create_time,$category_id,$post_content,$id){
-          // $imagepath=$this->mysqli->real_escape_string($uploadfile);
+        public function update($post_title,$create_time,$category_id,$post_content,$id,$uploadfile){
+           $imagepath=$this->mysqli->real_escape_string($uploadfile);
 
 
-          $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET post_title='{$post_title}', create_time='{$create_time}',category_id='{$category_id}',post_content='{$post_content}' WHERE post_id=$id;" );
+          $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET post_title='{$post_title}',featured_image='{$imagepath}', create_time='{$create_time}',category_id='{$category_id}',post_content='{$post_content}' WHERE post_id=$id;" );
           if($this->result){
             echo 'Updated Successfully';
           }else{
