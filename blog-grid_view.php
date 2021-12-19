@@ -169,7 +169,7 @@
                         </div>
                     </div>
                     <div class="col-lg-9 order-lg-2 order-1">
-                        <?php require_once('Widgets/blog_grid-2-col.php'); ?>
+                        <?php require_once('admin/widgets/blog_grid-2-col.php'); ?>
                     
                         <div class="row">
                             <div class="col-lg-12">

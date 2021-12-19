@@ -20,6 +20,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <!-- Fontawesome Star -->

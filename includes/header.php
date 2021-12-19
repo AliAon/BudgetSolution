@@ -14,6 +14,7 @@
     
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
  <!-- Custom CSS -->
     <title>Budget Solution</title>
   </head>
