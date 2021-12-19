@@ -1,7 +1,7 @@
 <div class="contact-form-content">
     <h3 class="contact-page-title">Tell Us Your Message</h3>
     <div class="contact-form">
-        <form id="contact-form" action="https://whizthemes.com/mail-php/mamunur/kenne/kenne.php">
+        <form method="post" action="admin/contact-form.php">
             <div class="form-group">
                 <label>Your Name <span class="required">*</span></label>
                 <input type="text" name="con_name" id="con_name" required>

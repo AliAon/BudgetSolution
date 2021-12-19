@@ -1,0 +1,14 @@
+{
+    "name": "aliaon/bugdet-home",
+    "description": "mail test",
+    "type": "plugin",
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    },
+    "authors": [
+        {
+            "name": "aliaon",
+            "email": "aon094944@gmail.com"
+        }
+    ]
+}
