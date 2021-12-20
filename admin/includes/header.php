@@ -179,6 +179,26 @@ header('location:login.php');
                         </ul>
                     </li>
                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-fw fa-clipboard"></i> Shop <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo3" class="collapse">
+                            <li>
+                                <a href="Products.php">Products</a>
+                            </li>
+                            <li>
+                                <a href="add_post.php">Add New Product</a>
+                            </li>
+                            <li>
+                                <a href="product_categoies.php">Categories</a>
+                            </li>
+                            <li>
+                                <a href="orders.php">Orders</a>
+                            </li>
+                            <li>
+                                <a href="customers.php">Customer</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-user"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo2" class="collapse">
                             <li>

@@ -1,0 +1,21 @@
+                           while($row=$result->fetch_object()){
+                            ?>
+                           
+                                <tr>
+                                
+                                <td><?php echo $row->order_id?></td>
+                                <td><?php echo $row->customer_id ?></td>
+                                <td><?php echo $row->cart_item_id  ?></td>
+                                
+                                <td>
+                               
+           <a href="delete_comment.php?id=<?php echo $row->order_id?>">
+           <button class="btn btn-outline-danager" type="submit" id="button-addon4">Delete</button></a>
+                </td>
+                                </tr>
+
+
+                                <tr>
+                                     <?php
+   }
+ ?>

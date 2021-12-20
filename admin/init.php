@@ -12,6 +12,10 @@ require_once Models_path.DS.'Session.php';
 require_once Models_path.DS.'Post.php';
 require_once Models_path.DS.'Categories.php';
 require_once Models_path.DS.'Comments.php';
-
+require_once Models_path.DS.'Product.php';
+require_once Models_path.DS.'ProductCategories.php';
+require_once Models_path.DS.'Cart.php';
+require_once Models_path.DS.'Customers.php';
+require_once Models_path.DS.'Orders.php';
 
 ?>
