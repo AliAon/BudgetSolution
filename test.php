@@ -25,7 +25,7 @@ try {
     //Recipients
     $mail->setFrom('from@example.com', 'Mailer');
     $mail->addAddress('aon094944@gmail.com', 'Ali Aon');     //Add a recipient
-    $mail->addReplyTo('aon094944@gmail.com', 'Information');
+    $mail->addReplyTo('aon094944@gmail.com', 'Ali Aon');
 
 
     //Attachments

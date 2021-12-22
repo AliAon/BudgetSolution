@@ -1,8 +1,23 @@
        <!-- Main Header Area End Here Two -->
        <?php include('includes/other_header.php')?>
         <!-- Main Header Area End Here Two -->
-   
+    <?php
+        if(isset($_GET['id'])){
+            $id=$_GET['id'];
+            $Cart=new Cart();
+            $cart_item_price=10;
+            $cart_item_subtotal=10;
+            $cart_items_total=10;
+            $cart_product_qty=1;
+            $Cart->create($id,$cart_product_qty,$cart_item_price,$cart_item_subtotal,$cart_items_total);
+        }
+        if(isset($_GET['remove'])){
+            $id=$_GET['remove'];
+            $Cart=new Cart();
+            $Cart->delete($id);
+        }
 
+    ?>
         <!-- Begin Kenne's Breadcrumb Area -->
         <div class="breadcrumb-area">
             <div class="container">
@@ -16,6 +31,7 @@
             </div>
         </div>
         <!-- Kenne's Breadcrumb Area End Here -->
+      
         <!-- Begin Uren's Cart Area -->
         <div class="kenne-cart-area">
             <div class="container">
@@ -35,42 +51,43 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="kenne-product-remove"><a href="javascript:void(0)"><i class="fa fa-trash"
+                                    <?php
+                        $Cart=new Cart();
+                        $result=$Cart->get_all();
+                      
+                        while($row=$result->fetch_object()){
+                        
+                            ?>
+
+<tr>
+                                            <td class="kenne-product-remove"><a href="cart.php?remove=<?php echo $row->cart_item_id?>"><i class="fa fa-trash"
                                                 title="Remove"></i></a></td>
-                                            <td class="kenne-product-thumbnail"><a href="javascript:void(0)"><img src="assets/images/product/small-size/1.jpg" alt="Uren's Cart Thumbnail"></a></td>
-                                            <td class="kenne-product-name"><a href="javascript:void(0)">Juma rema pola</a></td>
+                                            <td class="kenne-product-thumbnail"><a href="javascript:void(0)"><img src="admin/<?php echo $row->product_image ?>" width="100px" alt="Uren's Cart Thumbnail"></a></td>
+                                            <td class="kenne-product-name"><a href="javascript:void(0)"><?php echo $row->product_title ?></a></td>
                                             <td class="kenne-product-price"><span class="amount">$46.80</span></td>
                                             <td class="quantity">
                                                 <label>Quantity</label>
                                                 <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="1" type="text">
+                                                    <input class="cart-plus-minus-box" id="<?php
+                                                   echo $row->cart_item_id?>" value="<?php echo $row->cart_product_qty?>" type="text">
                                                     <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                                     <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                                 </div>
                                             </td>
                                             <td class="product-subtotal"><span class="amount">$46.80</span></td>
                                         </tr>
-                                        <tr>
-                                            <td class="kenne-product-remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
-                                            <td class="kenne-product-thumbnail"><a href="javascript:void(0)"><img src="assets/images/product/small-size/2.jpg" alt="Uren's Cart Thumbnail"></a></td>
-                                            <td class="kenne-product-name"><a href="javascript:void(0)">Bag Goodscol model</a>
-                                            </td>
-                                            <td class="kenne-product-price"><span class="amount">$71.80</span></td>
-                                            <td class="quantity">
-                                                <label>Quantity</label>
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                                </div>
-                                            </td>
-                                            <td class="product-subtotal"><span class="amount">$71.80</span></td>
-                                        </tr>
+
+
+                                <?php
+                                
+                        }
+                        ?>      
+
+                                       
                                     </tbody>
                                 </table>
                             </div>
+
                             <div class="row">
                                 <div class="col-12">
                                     <div class="coupon-all">
@@ -79,11 +96,12 @@
                                             <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
                                         </div>
                                         <div class="coupon2">
-                                            <input class="button" name="update_cart" value="Update cart" type="submit">
+                                            <input class="button" id="update_cart" name="update_cart" value="Update cart" type="submit">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                         
                             <div class="row">
                                 <div class="col-md-5 ml-auto">
                                     <div class="cart-page-total">
@@ -308,6 +326,7 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/cart-update.js"></script>
 
 </body>
 

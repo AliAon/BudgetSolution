@@ -25,6 +25,13 @@ class Product extends Database {
 
 
       }
+      //
+      public function findbyproductid($id){
+
+        $this->result=$this->mysqli->query("SELECT * FROM product INNER JOIN product_category ON product.product_category_id=product_category.product_category_id Where product_id= $id" );
+
+        return $this->result;
+      }
         // find cate_name by id
 
 
