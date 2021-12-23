@@ -64,7 +64,7 @@
                                                 title="Remove"></i></a></td>
                                             <td class="kenne-product-thumbnail"><a href="javascript:void(0)"><img src="admin/<?php echo $row->product_image ?>" width="100px" alt="Uren's Cart Thumbnail"></a></td>
                                             <td class="kenne-product-name"><a href="javascript:void(0)"><?php echo $row->product_title ?></a></td>
-                                            <td class="kenne-product-price"><span class="amount">$46.80</span></td>
+                                            <td class="kenne-product-price"><span class="amount">$<?php echo $row->product_price?></span></td>
                                             <td class="quantity">
                                                 <label>Quantity</label>
                                                 <div class="cart-plus-minus">
@@ -74,7 +74,7 @@
                                                     <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                                 </div>
                                             </td>
-                                            <td class="product-subtotal"><span class="amount">$46.80</span></td>
+                                            <td class="product-subtotal"><span class="amount">$<?php echo $row->cart_item_subtotal?></span></td>
                                         </tr>
 
 

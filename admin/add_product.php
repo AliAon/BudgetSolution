@@ -50,6 +50,10 @@ if(isset($_GET['id'])){
                       <label for="exampleInputTitle">Product Title</label>
                       <input type="text" name="product_title" class="form-control" value='<?php if(isset($row_by_id)){echo $row_by_id->product_title;}?>'  id="exampleInputTitle" aria-describedby="emailHelp" placeholder="Enter Title">
                   </div>
+                  <div class="form-group">
+                      <label for="exampleInputTitle">Product Price</label>
+                      <input type="number" name="product_price" class="form-control" value='<?php if(isset($row_by_id)){echo $row_by_id->product_price;}?>'  id="exampleInputTitle" aria-describedby="emailHelp" placeholder="Enter Price">
+                  </div>
          
   <div class="form-group">
     <label for="exampleFormControlPublished">Published At</label>

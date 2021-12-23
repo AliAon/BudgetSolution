@@ -3,6 +3,7 @@ require_once "init.php";
 if(isset($_POST['submit'])){
     $id=$_POST['id'];
      $product_title=$_POST['product_title'];
+     $product_price=$_POST['product_price'];
     $create_time= $_POST['create_time'];
     $product_category_id= $_POST['product_category_id'];
     $product_short_description= $_POST['product_short_description'];
@@ -24,11 +25,11 @@ if(isset($_POST['submit'])){
 
     if(empty($id)){
         $Product=new Product();
-        $Product->create($product_title,$uploadfile,$create_time,$product_short_description,$product_description,$product_category_id);
+        $Product->create($product_title,$product_price,$uploadfile,$create_time,$product_short_description,$product_description,$product_category_id);
         header('Location:Products.php');
     }else{
     $Product=new Product();
-    $Product->update($product_title,$uploadfile,$create_time,$product_short_description,$product_description,$product_category_id,$id);
+    $Product->update($product_title,$product_price,$uploadfile,$create_time,$product_short_description,$product_description,$product_category_id,$id);
     header('Location:Products.php');
     
     }

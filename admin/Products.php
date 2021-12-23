@@ -35,9 +35,10 @@
                                 
                                 <th scope="col">Product ID</th>
                                 <th scope="col">Product Title</th>
+                                <th scope="col">Product Price</th>
                                 <th scope="col">Featured Image</th>
                                 <th scope="col">Date</th>
-                                <th scope="col">Category ID</th>
+                                <th scope="col">Category</th>
                                 <th scope="col">Short Description</th>
                                 </tr>
                             </thead>
@@ -54,6 +55,7 @@
                                 
                                  <td><?php echo $row->product_id?></td>
                                 <td><?php echo $row->product_title ?></td>
+                                <td><?php echo $row->product_price ?></td>
                                 
                                 <td><img src="<?php echo $row->product_image?>" alt="" width="100px" class="img-thumbnail"></td>
                             

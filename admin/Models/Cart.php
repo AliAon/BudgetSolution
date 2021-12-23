@@ -25,7 +25,7 @@ class Cart extends Database {
       }
       public function findbyproductid($id){
 
-        $this->result=$this->mysqli->query("SELECT * FROM cart INNER JOIN product ON cart.cart_product_id=product.product_id Where cart_product_id= $id" );
+        $this->result=$this->mysqli->query("SELECT * FROM cart INNER JOIN product ON cart.cart_product_id=product.product_id Where cart_item_id= $id" );
 
         return $this->result;
       }
@@ -44,16 +44,15 @@ class Cart extends Database {
 
         // update
 
-        public function update($key,$value){
+        public function update($key,$value,$cart_item_subtotal){
 
-         echo $key . $value;
-         $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET	cart_product_qty='{$value}' WHERE cart_item_id=$key;" );        
+         $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET	cart_product_qty='{$value}',cart_item_subtotal='{$cart_item_subtotal}' WHERE cart_item_id=$key;" );        
          
-         if($this->result){
-            echo 'Updated Successfully';
-          }else{
-            echo 'query failed';
-          }
+        //  if($this->result){
+        //     echo 'Updated Successfully';
+        //   }else{
+        //     echo 'query failed';
+        //   }
   
           }
 

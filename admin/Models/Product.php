@@ -37,12 +37,12 @@ class Product extends Database {
 
       //create
      
-       public function create($product_title,$uploadfile,$create_time,$product_short_description,$product_description,$product_category_id){
+       public function create($product_title,$product_price,$uploadfile,$create_time,$product_short_description,$product_description,$product_category_id){
         // echo $uploadfile;
 
          $imagepath=$this->mysqli->real_escape_string($uploadfile);
 
-         $this->result=$this->mysqli->query("INSERT INTO  " .$this->db_table. " (product_title,product_image,create_time,product_short_description,product_description,product_category_id) VALUES('{$product_title}','{$imagepath}','{$create_time}','{$product_short_description}','{$product_description}','{$product_category_id}')" );
+         $this->result=$this->mysqli->query("INSERT INTO  " .$this->db_table. " (product_title,product_price,product_image,create_time,product_short_description,product_description,product_category_id) VALUES('{$product_title}','{$product_price}','{$imagepath}','{$create_time}','{$product_short_description}','{$product_description}','{$product_category_id}')" );
         if(!$this->result){
           echo 'query  failed';
         }
@@ -50,11 +50,11 @@ class Product extends Database {
 
         // update
 
-        public function update($product_title,$uploadfile,$create_time,$product_short_description,$product_description,$product_category_id,$id){
+        public function update($product_title,$product_price,$uploadfile,$create_time,$product_short_description,$product_description,$product_category_id,$id){
            $imagepath=$this->mysqli->real_escape_string($uploadfile);
 
 
-          $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET product_title='{$product_title}',product_image='{$imagepath}', create_time='{$create_time}',product_short_description='{$product_short_description}',product_description='{$product_description}',product_category_id='{$product_category_id}' WHERE product_id=$id;" );
+          $this->result=$this->mysqli->query("UPDATE ".$this->db_table." SET product_title='{$product_title}',product_price='{$product_price}',product_image='{$imagepath}', create_time='{$create_time}',product_short_description='{$product_short_description}',product_description='{$product_description}',product_category_id='{$product_category_id}' WHERE product_id=$id;" );
           if($this->result){
             echo 'Updated Successfully';
           }else{
